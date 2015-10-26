@@ -3,7 +3,7 @@ var http = require("http"),
 	path = require("path"),
 	fs = require("fs");
 
-function nodeServer(port, addr){
+function nodeServer(port){
 	http.createServer(function (req, res) {
 		var pathname=__dirname+url.parse(req.url).pathname;
 		if (path.extname(pathname) === "") {
@@ -44,8 +44,8 @@ function nodeServer(port, addr){
 				res.end("404 Not Found");
 			}
 		});
-	}).listen(port, addr);
-	console.log('Server running at http://' + addr +':' +port);
+	}).listen(port);
+	console.log('Server running at http:127.0.0.1:' + port);
 }
 
 module.exports.nodeServer = nodeServer;
