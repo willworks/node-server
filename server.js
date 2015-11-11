@@ -1,8 +1,9 @@
 var http = require('http'),
 	url = require('url'),
 	path = require('path'),
-	fs = require('fs');
-	
+	fs = require('fs'),
+	port = process.argv[2];
+
 http.createServer(function (req, res) {
 	var pathname=__dirname+url.parse(req.url).pathname;
 	if (path.extname(pathname) === '') {
@@ -43,5 +44,5 @@ http.createServer(function (req, res) {
 			res.end('404 Not Found');
 		}
 	});
-}).listen(8888);
-console.log('Server running at http:127.0.0.1:8888');
+}).listen(port);
+console.log('Server running at http:127.0.0.1:' + port);
