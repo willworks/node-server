@@ -2,8 +2,8 @@ var http = require('http'),
 	url = require('url'),
 	path = require('path'),
 	fs = require('fs'),
-	port = process.argv[2];
-
+	port = (process.argv[2] === undefined)?8080:process.argv[2];
+	
 http.createServer(function (req, res) {
 	var pathname=__dirname+url.parse(req.url).pathname;
 	if (path.extname(pathname) === '') {
