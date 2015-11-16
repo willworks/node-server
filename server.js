@@ -1,3 +1,12 @@
+/** 
+    Document   : node-server
+    Created on : 2015.11
+    Author     : Kevin Zhong
+    License    : MIT
+    github     : https://github.com/willworks/node-server/ 
+    Description: node http server
+    Copyright (c) 2015 Kevin Zhong
+*/
 var http = require('http'),
 	url = require('url'),
 	path = require('path'),
